@@ -1,0 +1,46 @@
+﻿@using WebApplication2.Models
+@model IEnumerable<Good>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        table, th, td{
+            border: 1px solid grey;
+            border-collapse: collapse;
+        }
+        th, td{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Good good in ViewBag.list)
+            {
+            <tr>
+                <td>@good.Id</td>
+                <td>@good.Title</td>
+                <td>@good.Price</td>
+                <td>@good.Category</td>
+            </tr>  
+            }
+        </tbody>
+    </table>
+</body>
+</html>
